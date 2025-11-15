@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #1a1b26;
+  --color-surface: #24283b;
+  --color-text: #c0caf5;
+  --color-accent-a: #3F51B5;
+  --color-accent-b: #B71C1C;
+  --color-tie: #737aa2;
+  --color-border: #414868;
+  
+  --font-family-mono: 'JetBrains Mono', monospace;
+}
+
+@layer base {
+  html {
+    @apply bg-bg;
+  }
+  
+  body {
+    @apply font-mono bg-bg text-text m-0 p-5 flex justify-center items-start min-h-screen;
+  }
+  
+  input[type="range"] {
+    @apply w-full h-2 bg-border rounded-md outline-none opacity-70 transition-opacity duration-200;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+  
+  input[type="range"]:hover {
+    @apply opacity-100;
+  }
+  
+  input[type="range"]::-webkit-slider-thumb {
+    @apply w-5 h-5 rounded-full bg-text cursor-pointer;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+  
+  input[type="range"]::-moz-range-thumb {
+    @apply w-5 h-5 rounded-full bg-text cursor-pointer;
+  }
+  
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  
+  input[type=number] {
+    appearance: textfield;
+    -moz-appearance: textfield;
+  }
+}
